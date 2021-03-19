@@ -120,6 +120,7 @@ HEAP_EXPORT(void heap_insert(struct heap* heap,
    * heap so we always insert at the left-most free node of the bottom row.
    */
   path = 0;
+  // 计算目标叶子节点到根节点的路径
   for (k = 0, n = 1 + heap->nelts; n >= 2; k += 1, n /= 2)
     path = (path << 1) | (n & 1);
 
@@ -197,6 +198,7 @@ HEAP_EXPORT(void heap_remove(struct heap* heap,
   child->right = node->right;
   child->parent = node->parent;
 
+  // 重置要移除的节点的子孙节点的引用
   if (child->left != NULL) {
     child->left->parent = child;
   }
@@ -205,6 +207,7 @@ HEAP_EXPORT(void heap_remove(struct heap* heap,
     child->right->parent = child;
   }
 
+  // 重置要移除节点的父节点对该节点的引用
   if (node->parent == NULL) {
     heap->min = child;
   } else if (node->parent->left == node) {
