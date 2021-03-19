@@ -37,6 +37,9 @@ struct heap_node {
  * The heap function try hard to detect corrupted tree nodes at the cost
  * of a minor reduction in performance.  Compile with -DNDEBUG to disable.
  */
+// 可以先通过 [Binary Tree](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/) 回顾
+// binary tree 的知识
+//
 // 使用 min heap，是利用该结构以下的特性：
 // - 根节点总是极值（最小 or 最大，根据需求）
 // - 相比数组，插入和移除的效率更高
