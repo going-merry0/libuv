@@ -129,7 +129,9 @@ HEAP_EXPORT(void heap_insert(struct heap* heap,
    */
   path = 0;
   // 计算目标叶子节点到根节点的路径
-  // 
+  //
+  // heap->nelts 表示堆中的节点数，nelts 表示 number of elements 
+  //
   // 因为是 [complete binary tree](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/) 的缘故，
   // 节点最终只会落在 Left 或者 Right 两个位置。假设使用 0 表示 Left，使用 1 表示 Right，且跟节点从 1 开始，
   // 那么第偶数个节点，必定在 Left 位置，第基数个节点必定在 Right 位置
